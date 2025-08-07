@@ -1,10 +1,54 @@
-import Landing from "../components/Landing";
+import { RiNotionFill } from "react-icons/ri";
+import { IoMail } from "react-icons/io5";
+import { IoLogoGithub } from "react-icons/io";
+import Aurora from "../components/Aurora";
+import TextType from "../components/TextType";
+import Jeongjoo from "../assets/images/jeongjoo.png";
+
 export default function Layout() {
+  const iconClass =
+    "text-2xl text-[var(--white-color)] cursor-pointer transition-transform duration-300 hover:scale-110";
+
   return (
-    <>
-      <div className="w-full h-full bg-[var(--background)]">
-        <Landing></Landing>
+    <div className="relative w-full h-screen bg-[var(--background)] overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Aurora
+          colorStops={["#fc5185", "#3fc1c9", "#364f6b"]}
+          blend={0.5}
+          amplitude={0.5}
+          speed={1}
+        />
       </div>
-    </>
+
+      <div className="relative z-10 flex flex-row gap-5 py-2 pr-4 items-center justify-end">
+        <div className={iconClass}>
+          <RiNotionFill />
+        </div>
+        <div className={iconClass}>
+          <IoMail />
+        </div>
+        <div className={iconClass}>
+          <IoLogoGithub />
+        </div>
+      </div>
+
+      <div className="relative z-10 flex flex-col items-center justify-center mt-[20px]">
+        <div className="flex flex-col items-center">
+          <img src={Jeongjoo} alt="Logo" className="w-[400px] h-auto" />
+          <div className="mt-[-70px] text-[36px] text-center">
+            <TextType
+              text={[
+                "Hello, World 👋",
+                "Welcome! It's great to have you here!",
+                "Happy coding!",
+              ]}
+              typingSpeed={150}
+              showCursor={true}
+              cursorCharacter="|"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -1,7 +1,11 @@
 export default function Footer() {
   return (
     <>
-      <h1>Footer Component</h1>
+      <div className="bg-[var(--background)] flex items-center justify-center">
+        <p className="text-[12px] text-[var(--main-color-1)] text-center">
+          © 2025 Jiyu. All rights reserved.
+        </p>
+      </div>
     </>
   );
 }
