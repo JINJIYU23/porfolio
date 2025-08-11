@@ -4,13 +4,14 @@ import { IoLogoGithub } from "react-icons/io";
 import Aurora from "../components/Aurora";
 import TextType from "../components/TextType";
 import Jeongjoo from "../assets/images/jeongjoo.png";
+import Main from "../components/Main";
 
 export default function Layout() {
   const iconClass =
     "text-2xl text-[var(--white-color)] cursor-pointer transition-transform duration-300 hover:scale-110";
 
   return (
-    <div className="relative w-full h-screen bg-[var(--background)] overflow-hidden">
+    <div className="relative w-full min-h-screen bg-[var(--background)]">
       <div className="absolute inset-0 z-0">
         <Aurora
           colorStops={["#fc5185", "#3fc1c9", "#364f6b"]}
@@ -32,22 +33,30 @@ export default function Layout() {
         </div>
       </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center mt-[20px]">
+      <div className="relative z-10 flex flex-col items-center justify-center">
         <div className="flex flex-col items-center">
-          <img src={Jeongjoo} alt="Logo" className="w-[400px] h-auto" />
-          <div className="mt-[-70px] text-[36px] text-center">
+          <img
+            src={Jeongjoo}
+            alt="Logo"
+            className="w-[250px] h-auto mt-[260px]"
+          />
+          <div className="mt-[50px] text-[36px] text-center">
             <TextType
               text={[
                 "Hello, World 👋",
-                "Welcome! It's great to have you here!",
-                "Happy coding!",
+                "안녕하세요! 프론트엔드 개발자 정지유입니다.",
               ]}
               typingSpeed={150}
               showCursor={true}
               cursorCharacter="|"
             />
           </div>
+          {/* <img src={Jeongjoo} alt="Logo" className="w-[400px] h-auto" /> */}
         </div>
+      </div>
+
+      <div className="relative z-10">
+        <Main />
       </div>
     </div>
   );
