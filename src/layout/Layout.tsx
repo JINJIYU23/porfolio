@@ -11,8 +11,12 @@ export default function Layout() {
     "text-2xl text-[var(--white-color)] cursor-pointer transition-transform duration-300 hover:scale-110";
 
   return (
-    <div className="relative w-full min-h-screen bg-[var(--background)]">
-      <div className="absolute inset-0 z-0">
+    <div className="relative w-full min-h-screen bg-[var(--background)] select-none">
+      <div
+        className="absolute top-0 left-0 right-0 h-[1000px] z-0 overflow-hidden
+                [mask-image:linear-gradient(to_bottom,white,transparent)]
+                [-webkit-mask-image:linear-gradient(to_bottom,white,transparent)]"
+      >
         <Aurora
           colorStops={["#fc5185", "#3fc1c9", "#364f6b"]}
           blend={0.5}
@@ -38,7 +42,7 @@ export default function Layout() {
           <img
             src={Jeongjoo}
             alt="Logo"
-            className="w-[250px] h-auto mt-[260px]"
+            className="w-[250px] h-auto mt-[200px]"
           />
           <div className="mt-[50px] text-[36px] text-center">
             <TextType

@@ -36,17 +36,17 @@ export default function Skills() {
       </h1>
       <div className="grid grid-cols-4 gap-6">
         {skills.map((skill, index) => (
-          <div key={index} className="relative group">
-            <button className="w-[60px] h-[60px] rounded-[10px] bg-white/20 hover:shadow-[0_8px_15px_var(--main-color-1)] transition-shadow duration-300 flex items-center justify-center backdrop-blur-sm">
+          <div key={index} className="relative">
+            <button className="group w-[60px] h-[60px] rounded-[10px] bg-white/20 hover:shadow-[0_8px_15px_var(--main-color-1)] transition-shadow duration-300 flex items-center justify-center backdrop-blur-sm">
               <img
                 src={skill.src}
                 alt={skill.alt}
                 className="w-[40px] h-[40px] object-cover"
               />
+              <div className="absolute bottom-[70px] left-1/2 -translate-x-1/2 px-2 py-1 text-[12px] text-[var(--white-color)] bg-[var(--main-color-1)] rounded-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+                {skill.alt}
+              </div>
             </button>
-            <div className="absolute bottom-[70px] left-1/2 -translate-x-1/2 px-2 py-1 text-[12px] text-[var(--white-color)] bg-[var(--main-color-1)] rounded-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
-              {skill.alt}
-            </div>
           </div>
         ))}
       </div>
