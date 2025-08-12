@@ -2,6 +2,7 @@ import Nayo from "../assets/images/nayo.png";
 import toast from "react-hot-toast";
 import SectionLayout from "../layout/SectionLayout";
 
+//
 export default function Contact() {
   const email = "dhkswksla22@gmail.com";
 
