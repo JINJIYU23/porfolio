@@ -1,9 +1,10 @@
+import SectionLayout from "../layout/SectionLayout";
 import Figma from "../assets/images/figma.png";
 import Git from "../assets/images/git.png";
 import Github from "../assets/images/github.png";
 import Js from "../assets/images/js.png";
 import Next from "../assets/images/next.png";
-import React from "../assets/images/react.png";
+import ReactImg from "../assets/images/react.png"; // React 예약어 피하려고 이름 변경
 import Slack from "../assets/images/slack.png";
 import Supabase from "../assets/images/supabase.png";
 import Tailwind from "../assets/images/tailwind.png";
@@ -15,7 +16,7 @@ import Zustand from "../assets/images/zustand.png";
 const skills = [
   { src: Js, alt: "JavaScript" },
   { src: Ts, alt: "TypeScript" },
-  { src: React, alt: "React" },
+  { src: ReactImg, alt: "React" },
   { src: Next, alt: "Next.js" },
   { src: Tailwind, alt: "TailwindCSS" },
   { src: Vite, alt: "Vite" },
@@ -30,10 +31,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <div className="px-[200px] flex flex-col justify-center items-center pb-[250px]">
-      <h1 className="text-[24px] text-[var(--main-color-1)] py-[50px]">
-        기술 스택 및 도구
-      </h1>
+    <SectionLayout title="기술 스택 및 도구">
       <div className="grid grid-cols-4 gap-6">
         {skills.map((skill, index) => (
           <div key={index} className="relative">
@@ -50,6 +48,6 @@ export default function Skills() {
           </div>
         ))}
       </div>
-    </div>
+    </SectionLayout>
   );
 }

@@ -42,12 +42,12 @@ export default function Layout() {
           <img
             src={Jeongjoo}
             alt="Logo"
-            className="w-[250px] h-auto mt-[200px]"
+            className="w-[250px] h-auto mt-[250px]"
           />
-          <div className="mt-[50px] text-[36px] text-center">
+          <div className="mt-[50px] text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px]  text-center">
             <TextType
               text={[
-                "Hello, World 👋",
+                "Hello, World!",
                 "안녕하세요! 프론트엔드 개발자 정지유입니다.",
               ]}
               typingSpeed={150}
@@ -55,7 +55,6 @@ export default function Layout() {
               cursorCharacter="|"
             />
           </div>
-          {/* <img src={Jeongjoo} alt="Logo" className="w-[400px] h-auto" /> */}
         </div>
       </div>
 

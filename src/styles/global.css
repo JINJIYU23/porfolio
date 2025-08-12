@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "YdestreetB";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/YdestreetB.woff2")
+  font-family: "GumiDotumTTF";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/GumiDotumTTF.woff2")
     format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 body {
-  font-family: "YdestreetB";
+  font-family: "GumiDotumTTF";
 }
 
 :root {
