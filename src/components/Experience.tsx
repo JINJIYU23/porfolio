@@ -32,10 +32,16 @@ export default function Experience() {
     <>
       <div className="px-[200px] flex flex-col justify-center items-center pb-[250px]">
         <h1 className="text-[24px] text-[var(--main-color-1)] py-[50px]">
-          경험 / 활동 / 교육
+          학력 / 활동 / 교육
         </h1>
 
         <div>
+          <ExperienceItem
+            date="2021.03 - 2025.02"
+            title="삼육대학교"
+            tag="인공지능융합학부"
+            details={["졸업", "학점 4.03/4.5"]}
+          />
           <ExperienceItem
             date="2023.04 - 2023.12"
             title="멋쟁이 사자처럼"

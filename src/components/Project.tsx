@@ -1,49 +1,80 @@
+import { useState } from "react";
 import ScrollStack, { ScrollStackItem } from "../components/ScrollStack";
-// Project.tsx (외부 div도 스크롤 제한 없도록 변경)
-export default function Project() {
-  return (
-    <>
-      <div className="px-[200px] flex flex-col justify-center items-center pb-[250px]">
-        <h1 className="text-[24px] text-[var(--main-color-1)] py-[50px]">
-          프로젝트 상세
-        </h1>
+import projectItems from "../data/project.ts";
+import Detail from "../components/Datail.tsx";
+interface ProjectItem {
+  title: string;
+  description: string;
+  bgColor: string;
+  tech: string[];
+  logo: string;
+  url: string;
+}
 
-        <div className="w-full h-[600px]">
-          <ScrollStack>
-            <ScrollStackItem itemClassName="bg-[var(--main-color-1)] text-[var(--white-color)]">
-              <h2 className="text-[24px]">티태</h2>
-              <p className="text-[16px] mt-[10px]">
-                챌린지를 통해 자산을 관리하는 실천형 가계부
-              </p>
+export default function Project() {
+  const [showDetail, setShowDetail] = useState<boolean>(false);
+  const openModal = () => {
+    setShowDetail(true);
+  };
+
+  const closeModal = () => {
+    setShowDetail(false);
+  };
+  return (
+    <div className="px-[200px] flex flex-col justify-center items-center pb-[250px]">
+      <h1 className="text-[24px] text-[var(--main-color-1)] py-[50px]">
+        프로젝트 상세
+      </h1>
+
+      <div className="w-full h-[600px]">
+        <ScrollStack>
+          {projectItems.map((item: ProjectItem, index: number) => (
+            <ScrollStackItem
+              key={index}
+              itemClassName={`text-[var(--white-color)] flex flex-col justify-between h-full p-[20px]`}
+              style={{ background: item.bgColor }}
+            >
+              <div>
+                <div className="flex justify-start mb-[10px]">
+                  <img
+                    src={item.logo}
+                    alt={`${item.title} 로고`}
+                    className="w-[120px] h-auto object-contain"
+                  />
+                </div>
+                <h2 className="text-[24px]">{item.title}</h2>
+                <p className="text-[18px] mt-[10px]">{item.description}</p>
+                <div className="flex gap-2 my-[10px]">
+                  {item.tech.map((tech, techIndex) => (
+                    <button
+                      key={techIndex}
+                      className={`py-1 px-3 bg-[var(--white-color)] text-[16px] rounded-[10px]`}
+                      style={{ color: item.bgColor }}
+                    >
+                      {tech}
+                    </button>
+                  ))}
+                </div>
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer hover:text-black transition text-[16px]"
+                >
+                  사이트 바로가기
+                </a>
+                <button
+                  onClick={() => openModal()}
+                  className="text-[16px] flex w-[100px] my-[5px] transition-all duration-300 ease-in-out hover:text-black cursor-pointer"
+                >
+                  자세히 보기
+                </button>
+              </div>
             </ScrollStackItem>
-            <ScrollStackItem itemClassName="bg-[var(--point-color-1)] text-[var(--white-color)]">
-              <h2 className="text-[24px]">SomePick</h2>
-              <p className="text-[16px] mt-[10px]">
-                커플, 솔로 모두를 위한 연애 플랫폼
-              </p>
-            </ScrollStackItem>
-            <ScrollStackItem itemClassName="bg-[var(--main-color-1)] text-[var(--white-color)]">
-              <h2 className="text-[24px]">TouchBase</h2>
-              <p className="text-[16px] mt-[10px]">
-                KBO팬들을 위한 야구 커뮤니티
-              </p>
-            </ScrollStackItem>
-            <ScrollStackItem itemClassName="bg-[var(--point-color-1)] text-[var(--white-color)]">
-              <h2 className="text-[24px]">이모지 추천기 Emoji</h2>
-              <p className="text-[16px] mt-[10px]">
-                검색어에 따라 Gemini를 사용한 인공지능으로 이모지를 추천해주는
-                이모지 추천기 emoji
-              </p>
-            </ScrollStackItem>
-            {/* <ScrollStackItem itemClassName="bg-[var(--main-color-1)] text-[var(--white-color)]">
-              <h2 className="text-[24px]">나와 어울리는 고양이 찾기</h2>
-              <p className="text-[16px] mt-[10px]">
-                MBTI 테스트로 알아보는 나와 어울리는 고양이 찾기!
-              </p>
-            </ScrollStackItem> */}
-          </ScrollStack>
-        </div>
+          ))}
+        </ScrollStack>
       </div>
-    </>
+      {showDetail && <Detail />}
+    </div>
   );
 }

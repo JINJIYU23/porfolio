@@ -1,3 +1,4 @@
+import Contact from "./Contact";
 import Experience from "./Experience";
 import Moto from "./Moto";
 import Project from "./Project";
@@ -10,6 +11,7 @@ export default function Main() {
       <Skills />
       <Project />
       <Experience />
+      <Contact />
     </>
   );
 }

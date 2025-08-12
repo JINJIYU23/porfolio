@@ -6,13 +6,17 @@ import "../styles/ScrollStack.css";
 export interface ScrollStackItemProps {
   itemClassName?: string;
   children: ReactNode;
+  style?: React.CSSProperties;
 }
 
 export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({
   children,
   itemClassName = "",
+  style,
 }) => (
-  <div className={`scroll-stack-card ${itemClassName}`.trim()}>{children}</div>
+  <div className={`scroll-stack-card ${itemClassName}`.trim()} style={style}>
+    {children}
+  </div>
 );
 
 interface ScrollStackProps {
