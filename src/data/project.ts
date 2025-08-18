@@ -3,12 +3,20 @@ import Emoji from "../assets/images/emoji.png";
 import Titae from "../assets/images/titae.png";
 import Touchbase from "../assets/images/touchbase.png";
 import Cats from "../assets/images/cats.png";
+import { LuMessageCircleHeart } from "react-icons/lu";
+import { LuPiggyBank } from "react-icons/lu";
+import { CiBaseball } from "react-icons/ci";
+import { MdEmojiEmotions } from "react-icons/md";
+import { PiCatFill } from "react-icons/pi";
 
 const projectItems = [
   {
     title: "티태",
     description: "챌린지를 통해 자산을 관리하는 실천형 가계부",
     bgColor: "rgba(107, 118, 255, 0.5)",
+    textColor: "rgba(107, 118, 255, 1)",
+    icon: LuPiggyBank,
+    date: "25.06.01 - 25.07.01",
     tech: [
       "React",
       "TypeScript",
@@ -25,6 +33,9 @@ const projectItems = [
     title: "SomePick",
     description: "커플, 솔로 모두를 위한 연애 플랫폼",
     bgColor: "rgba(255, 199, 237, 0.5)",
+    textColor: "rgba(255, 199, 237, 1)",
+    icon: LuMessageCircleHeart,
+    date: "25.06.01 - 25.07.01",
     tech: [
       "React",
       "TypeScript",
@@ -111,6 +122,9 @@ const projectItems = [
     title: "TouchBase",
     description: "KBO팬들을 위한 야구 커뮤니티",
     bgColor: "rgba(0, 51, 160, 1)",
+    textColor: "rgba(0, 51, 160, 1)",
+    icon: CiBaseball,
+    date: "",
     tech: ["React", "TypeScript", "Zustand", "Tailwind CSS", "Figma"],
     logo: Touchbase,
     url: "https://kdt-touch-base.netlify.app/",
@@ -191,6 +205,9 @@ const projectItems = [
     description:
       "검색어에 따라 Gemini를 사용해 이모지를 추천해주는 이모지 추천기 emoji",
     bgColor: "rgba(255, 250, 205, 0.5)",
+    textColor: "rgba(255, 250, 205, 1)",
+    icon: MdEmojiEmotions,
+    date: "",
     tech: [
       "React",
       "JavaScript",
@@ -273,6 +290,9 @@ const projectItems = [
     title: "나와 어울리는 고양이 찾기",
     description: "MBTI 테스트로 알아보는 나와 어울리는 고양이 찾기!",
     bgColor: "rgba(255, 205, 188, 0.5)",
+    textColor: "rgba(255, 205, 188,1)",
+    icon: PiCatFill,
+    date: "",
     tech: ["React", "JavaScript", "Vite"],
     logo: Cats,
     url: "https://mbti-test-virid.vercel.app/",

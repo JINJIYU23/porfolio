@@ -1,5 +1,5 @@
-import { LuMessageCircleHeart } from "react-icons/lu";
 import type { ProjectItem } from "../types/projectType";
+import React from "react";
 
 export default function Detail({
   project,
@@ -9,15 +9,16 @@ export default function Detail({
   onClose: () => void;
 }) {
   if (!project) return null;
+  const Icon = project.icon;
   return (
     <>
       <div
-        className="fixed inset-0 flex justify-center items-center z-50"
+        className="fixed inset-0 flex justify-center items-center z-50 p-3"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}
         onClick={onClose}
       >
         <div
-          className="bg-[var(--background)] rounded-[10px] p-8 max-w-lg w-full relative"
+          className="bg-[var(--background)] h-[90vh] rounded-[10px] p-8 max-w-[800px] w-full relative overflow-y-auto"
           onClick={(e) => e.stopPropagation()}
         >
           <button
@@ -27,76 +28,114 @@ export default function Detail({
           >
             ×
           </button>
-          <LuMessageCircleHeart className="w-20 h-20 text-pink-400" />
-          <h1 className="text-[32px] font-semibold my-4 text-[var(--white-color)]">
+          <Icon className="w-20 h-20" style={{ color: project.textColor }} />
+          <h1
+            className="text-[32px] font-semibold my-4"
+            style={{ color: project.textColor }}
+          >
             {project.title}
           </h1>
-          <div className="text-[var(--white-color)]">
-            <ul>
-              <li>
-                <h2>Tech</h2>
-                <p>React TypeScript TailWindCss</p>
+          <div className="text-[var(--white-color)] text-[16px] my-[20px]">
+            <ul className="flex flex-col gap-2">
+              <li className="flex items-center gap-4">
+                <h2 className="text-[24px] text-[var(--main-color-1)] w-[120px]">
+                  Tech
+                </h2>
+                <p className="flex-1">{project.tech.join(", ")}</p>
               </li>
-              <li>
-                <h2>Date</h2>
-                <p>2025.05.19 - 2025.06.18</p>
-              </li>{" "}
-              <li>
-                <h2>Detail in GitHub</h2>
+              <li className="flex items-center gap-4">
+                <h2 className="text-[24px] text-[var(--main-color-1)] w-[120px]">
+                  Date
+                </h2>
+                <p className="flex-1">{project.date}</p>
+              </li>
+              <li className="flex items-center gap-4">
+                <h2 className="text-[24px] text-[var(--main-color-1)] w-[120px]">
+                  GitHub
+                </h2>
                 <a
-                  href="https://github.com/run3go/Devcourse_SomePick"
+                  className="flex-1"
+                  href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   GitHub
                 </a>
               </li>
-              <li>
-                <h2>Page</h2>
+              <li className="flex items-center gap-4">
+                <h2 className="text-[24px] text-[var(--main-color-1)] w-[120px]">
+                  Page
+                </h2>
                 <a
-                  href="https://somepick.netlify.app/"
+                  className="flex-1"
+                  href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  SomePick
+                  {project.title}
                 </a>
               </li>
             </ul>
           </div>
 
-          <hr />
+          <hr className="text-[var(--white-color)]" />
 
-          <div className="text-[var(--white-color)]">
-            <h2>프로젝트 소개</h2>
-            <p>
-              커플과 솔로 모두를 위한 맞춤형 연애 서비스, 관심사 기반 소개팅,
-              커플 일정 공유,연애 커뮤니티까지 연애 상황에 따라 맞춤 기능을
-              제공하는 소개팅 플랫폼
-            </p>
-            <ul>
-              <li>
-                ‘SomePick’은 사용자의 연애 상태(솔로/커플)에 따라 맞춤형 기능을
-                제공하는 연애 기반 플랫폼입니다.
-              </li>
+          <div className="text-[var(--white-color)] my-[20px]">
+            <h2 className="text-[24px] text-[var(--main-color-1)]">
+              프로젝트 소개
+            </h2>
+            <p className="text-semibold text-[18px]">{project.info}</p>
+            <ul className="ml-4 list-disc">
+              {project.infoDetail?.map((detail, index) => (
+                <li key={index}>{detail}</li>
+              ))}
             </ul>
           </div>
 
           <div className="text-[var(--white-color)]">
-            <h2>역할</h2>
-            <ul>
-              <li></li>
-            </ul>
+            <h2 className="text-[24px] text-[var(--main-color-1)]">역할</h2>
+            {project.role?.map((roleItem, index) => (
+              <div key={index} className="mb-[20px]">
+                <p className="font-semibold mb-1">{`${index + 1}. ${
+                  roleItem.title
+                }`}</p>
+                <ul className="ml-4 list-disc">
+                  {roleItem.tasks.map((task, taskIndex) => (
+                    <React.Fragment key={taskIndex}>
+                      {task.name ? (
+                        <li>
+                          <p className="font-medium">{task.name}</p>
+                          <ul className="ml-4 list-disc">
+                            {task.details.map((detail, detailIndex) => (
+                              <li key={detailIndex}>{detail}</li>
+                            ))}
+                          </ul>
+                        </li>
+                      ) : (
+                        task.details.map((detail, detailIndex) => (
+                          <li key={detailIndex}>{detail}</li>
+                        ))
+                      )}
+                    </React.Fragment>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
           <div className="text-[var(--white-color)]">
-            <h2>배운점</h2>
-            <ul>
-              <li></li>
+            <h2 className="text-[24px] text-[var(--main-color-1)]">배운점</h2>
+            <ul className="ml-4 list-disc">
+              {project.review?.map((review, index) => (
+                <li key={index}>{review}</li>
+              ))}
             </ul>
           </div>
 
-          <div className="text-[var(--white-color)]">
-            <h2>페이지별 구현 결과</h2>
+          <div className="text-[var(--white-color)] my-[20px]">
+            <h2 className="text-[24px] text-[var(--main-color-1)]">
+              페이지별 구현 결과
+            </h2>
             <ul>
               <li></li>
             </ul>

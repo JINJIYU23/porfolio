@@ -1,3 +1,4 @@
+import type { IconType } from "react-icons";
 interface Task {
   name: string | null;
   details: string[];
@@ -17,6 +18,9 @@ export interface ProjectItem {
   title: string;
   description: string;
   bgColor: string;
+  textColor: string;
+  icon: IconType;
+  date: string;
   tech: string[];
   logo: string;
   url: string;
