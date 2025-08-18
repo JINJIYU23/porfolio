@@ -1,52 +1,30 @@
 import SpotlightCard from "../components/SpotligthCard";
 import projectItems from "../data/project.ts";
+import type { ProjectItem } from "../types/projectType.ts";
 import Detail from "../components/Datail.tsx";
 import SectionLayout from "../layout/SectionLayout";
 import { useState, useEffect } from "react";
 
-interface Task {
-  name: string | null;
-  details: string[];
-}
-
-interface Role {
-  title: string;
-  tasks: Task[];
-}
-
-interface Result {
-  title: string;
-  img: string;
-}
-
-export interface ProjectItem {
-  title: string;
-  description: string;
-  bgColor: string;
-  tech: string[];
-  logo: string;
-  url: string;
-
-  // 새로 추가된 필드
-  info?: string;
-  infoDetail?: string[];
-  role?: Role[];
-  review?: string[];
-  result?: Result[];
-}
-
 export default function Projects() {
-  const [showDetail, setShowDetail] = useState<boolean>(false);
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(
+    null
+  );
 
-  const openModal = () => setShowDetail(true);
+  const openModal = (project: ProjectItem) => {
+    setSelectedProject(project);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+  };
 
   useEffect(() => {
-    if (showDetail) {
+    if (selectedProject) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
-  }, [showDetail]);
+  }, [selectedProject]);
   return (
     <>
       <SectionLayout title="프로젝트 상세">
@@ -87,7 +65,7 @@ export default function Projects() {
                   사이트 바로가기
                 </a>
                 <button
-                  onClick={openModal}
+                  onClick={() => openModal(item)}
                   className="text-base flex w-fit my-1 transition-all duration-300 ease-in-out hover:scale-110 cursor-pointer"
                 >
                   자세히 보기
@@ -97,7 +75,9 @@ export default function Projects() {
           ))}
         </div>
 
-        {showDetail && <Detail onClose={() => setShowDetail(false)} />}
+        {selectedProject && (
+          <Detail onClose={closeModal} project={selectedProject} />
+        )}
       </SectionLayout>
     </>
   );

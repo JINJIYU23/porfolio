@@ -1,5 +1,14 @@
 import { LuMessageCircleHeart } from "react-icons/lu";
-export default function Detail({ onClose }: { onClose: () => void }) {
+import type { ProjectItem } from "../types/projectType";
+
+export default function Detail({
+  project,
+  onClose,
+}: {
+  project: ProjectItem | null;
+  onClose: () => void;
+}) {
+  if (!project) return null;
   return (
     <>
       <div
@@ -12,7 +21,7 @@ export default function Detail({ onClose }: { onClose: () => void }) {
           onClick={(e) => e.stopPropagation()}
         >
           <button
-            className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold"
+            className="absolute top-4 right-4 text-gray-500 hover:text-[var(--white-color)] text-2xl font-bold"
             onClick={onClose}
             aria-label="Close modal"
           >
@@ -20,9 +29,9 @@ export default function Detail({ onClose }: { onClose: () => void }) {
           </button>
           <LuMessageCircleHeart className="w-20 h-20 text-pink-400" />
           <h1 className="text-[32px] font-semibold my-4 text-[var(--white-color)]">
-            SomePick
+            {project.title}
           </h1>
-          <div>
+          <div className="text-[var(--white-color)]">
             <ul>
               <li>
                 <h2>Tech</h2>
@@ -57,7 +66,7 @@ export default function Detail({ onClose }: { onClose: () => void }) {
 
           <hr />
 
-          <div>
+          <div className="text-[var(--white-color)]">
             <h2>프로젝트 소개</h2>
             <p>
               커플과 솔로 모두를 위한 맞춤형 연애 서비스, 관심사 기반 소개팅,
@@ -72,21 +81,21 @@ export default function Detail({ onClose }: { onClose: () => void }) {
             </ul>
           </div>
 
-          <div>
+          <div className="text-[var(--white-color)]">
             <h2>역할</h2>
             <ul>
               <li></li>
             </ul>
           </div>
 
-          <div>
+          <div className="text-[var(--white-color)]">
             <h2>배운점</h2>
             <ul>
               <li></li>
             </ul>
           </div>
 
-          <div>
+          <div className="text-[var(--white-color)]">
             <h2>페이지별 구현 결과</h2>
             <ul>
               <li></li>
