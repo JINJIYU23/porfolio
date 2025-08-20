@@ -1,21 +1,32 @@
 import SectionLayout from "../layout/SectionLayout";
-import Profile from "../assets/images/jjy.jpeg";
+import ProfileCard from "./ProfileCard";
+import jjy from "../assets/images/jiyuyuyu.jpeg";
 
 export default function Moto() {
   return (
-    <SectionLayout title="중요한 건, 마음">
-      <div className="flex flex-col md:flex-row gap-10 text-[var(--white-color)] text-[16px]">
-        <img
-          src={Profile}
-          alt="프로필 이미지"
-          className="w-full max-w-[300px] h-auto rounded-[10px] mx-auto md:mx-0"
+    <SectionLayout title="About Me">
+      <div className="flex flex-col md:flex-row gap-10 text-[var(--white-color)] items-center justify-center text-[16px]">
+        <ProfileCard
+          imageSrc={jjy}
+          altText="지유의 프로필"
+          captionText="지유의 프로필"
+          containerHeight="400px"
+          containerWidth="300px"
+          imageHeight="400px"
+          imageWidth="300px"
+          rotateAmplitude={12}
+          scaleOnHover={1.1}
+          showMobileWarning={false}
+          showTooltip={false}
+          displayOverlayContent={false}
+          overlayContent={<p className="tilted-card-demo-text"></p>}
         />
-        <div className="flex flex-col justify-between text-start">
+        <div className="flex flex-col md:ml-[30px] justify-between text-start">
           <p className="mb-[20px]">
-            빠르게 변화하는 기술과 트렌드 속에서 살아가는 개발자에게 ‘적응’은 더
-            이상 선택이 아닌 생존의 조건입니다. <br />
-            특히 프론트엔드는 하루가 다르게 변화하는 만큼, 늘 새로운 것을 배우고
-            적용해야 합니다.
+            빠르게 변화하는 기술과 트렌드 속에서 살아가는 개발자에게 <br />{" "}
+            ‘적응’은 더 이상 선택이 아닌 생존의 조건입니다. <br />
+            특히 프론트엔드는 하루가 다르게 변화하는 만큼, <br /> 늘 새로운 것을
+            배우고 적용해야 합니다.
           </p>
           <p className="mb-[20px]">
             저 또한 그런 흐름 속에서 발맞춰 나가고자 끊임없이 공부하고 도전해

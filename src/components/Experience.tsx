@@ -31,7 +31,7 @@ const ExperienceItem = ({ date, title, tag, details }: Props) => (
 
 export default function Experience() {
   return (
-    <SectionLayout title="학력 / 활동 / 교육">
+    <SectionLayout title="Education / Experience">
       <div>
         <ExperienceItem
           date="2021.03 - 2025.02"

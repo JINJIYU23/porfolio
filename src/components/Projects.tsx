@@ -27,7 +27,7 @@ export default function Projects() {
   }, [selectedProject]);
   return (
     <>
-      <SectionLayout title="프로젝트 상세">
+      <SectionLayout title="Projects">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projectItems.map((item: ProjectItem) => (
             <SpotlightCard
@@ -48,8 +48,8 @@ export default function Projects() {
                   {item.tech.map((tech, techIndex) => (
                     <button
                       key={techIndex}
-                      className="py-1 px-2 md:px-3 bg-neutral-800 text-base rounded-[10px] break-words"
-                      style={{ color: item.bgColor }}
+                      className="py-1 px-2 md:px-3 bg-neutral-600 text-base rounded-[10px] break-words"
+                      style={{ color: item.textColor }}
                     >
                       {tech}
                     </button>

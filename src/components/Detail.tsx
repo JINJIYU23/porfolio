@@ -18,7 +18,7 @@ export default function Detail({
         onClick={onClose}
       >
         <div
-          className="bg-[var(--background)] h-[90vh] rounded-[10px] p-8 max-w-[800px] w-full relative overflow-y-auto"
+          className="hide-scrollbar bg-[var(--background)] h-[90vh] rounded-[10px] p-8 max-w-[800px] w-full relative overflow-y-auto"
           onClick={(e) => e.stopPropagation()}
         >
           <button

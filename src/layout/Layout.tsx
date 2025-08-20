@@ -26,15 +26,23 @@ export default function Layout() {
       </div>
 
       <div className="relative z-10 flex flex-row gap-5 py-2 pr-4 items-center justify-end">
-        <div className={iconClass}>
+        <a
+          className={iconClass}
+          target="_blank"
+          href="https://flint-megaraptor-562.notion.site/1480d2b6eed180b9a46ded03bd59370d"
+        >
           <RiNotionFill />
-        </div>
-        <div className={iconClass}>
+        </a>
+        <a className={iconClass} href="mailto:dhkswksla22@gmail.com">
           <IoMail />
-        </div>
-        <div className={iconClass}>
+        </a>
+        <a
+          className={iconClass}
+          target="_blank"
+          href="https://github.com/JINJIYU23"
+        >
           <IoLogoGithub />
-        </div>
+        </a>
       </div>
 
       <div className="relative z-10 flex flex-col items-center justify-center">

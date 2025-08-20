@@ -31,7 +31,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <SectionLayout title="기술 스택 및 도구">
+    <SectionLayout title="Skills">
       <div className="grid grid-cols-4 gap-6">
         {skills.map((skill, index) => (
           <div key={index} className="relative">
