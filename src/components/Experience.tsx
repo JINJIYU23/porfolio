@@ -14,12 +14,12 @@ const ExperienceItem = ({ date, title, tag, details }: Props) => (
     </div>
 
     <div className="flex flex-col text-left">
-      <p className="text-[24px] text-[var(--main-color-1)]">
-        {title}{" "}
-        <span className="text-[16px] text-[var(--main-color-2)] border rounded-[10px] px-2 py-1 shadow-md">
+      <div className="flex items-center gap-2">
+        <p className="text-[24px] text-[var(--main-color-1)]">{title} </p>
+        <span className="text-[16px] text-[var(--main-color-2)] border rounded-[10px] px-2 py-1">
           {tag}
         </span>
-      </p>
+      </div>
       <ul className="text-[16px] mt-[10px] list-disc ml-5">
         {details.map((item, index) => (
           <li key={index}>{item}</li>

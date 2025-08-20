@@ -1,7 +1,7 @@
-import SpotlightCard from "../components/SpotligthCard";
+import SpotlightCard from "./SpotlightCard.tsx";
 import projectItems from "../data/project.ts";
 import type { ProjectItem } from "../types/projectType.ts";
-import Detail from "../components/Datail.tsx";
+import Detail from "./Detail.tsx";
 import SectionLayout from "../layout/SectionLayout";
 import { useState, useEffect } from "react";
 
