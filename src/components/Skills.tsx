@@ -12,6 +12,7 @@ import Tanstack from "../assets/images/tanstack.png";
 import Ts from "../assets/images/ts.png";
 import Vite from "../assets/images/vite.png";
 import Zustand from "../assets/images/zustand.png";
+import useFadeIn from "../hooks/useFadeIn";
 
 const skills = [
   { src: Js, alt: "JavaScript" },
@@ -30,24 +31,27 @@ const skills = [
 ];
 
 export default function Skills() {
+  const fadein = useFadeIn();
   return (
-    <SectionLayout title="Skills">
-      <div className="grid grid-cols-4 gap-6">
-        {skills.map((skill, index) => (
-          <div key={index} className="relative">
-            <button className="group w-[60px] h-[60px] rounded-[10px] bg-white/20 hover:shadow-[0_8px_15px_var(--main-color-1)] transition-shadow duration-300 flex items-center justify-center backdrop-blur-sm">
-              <img
-                src={skill.src}
-                alt={skill.alt}
-                className="w-[40px] h-[40px] object-cover"
-              />
-              <div className="absolute bottom-[70px] left-1/2 -translate-x-1/2 px-2 py-1 text-[12px] text-[var(--white-color)] bg-[var(--main-color-1)] rounded-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
-                {skill.alt}
-              </div>
-            </button>
-          </div>
-        ))}
-      </div>
-    </SectionLayout>
+    <div {...fadein}>
+      <SectionLayout title="Skills">
+        <div className="grid grid-cols-4 gap-6">
+          {skills.map((skill, index) => (
+            <div key={index} className="relative">
+              <button className="group w-[60px] h-[60px] rounded-[10px] bg-white/20 hover:shadow-[0_8px_15px_var(--main-color-1)] transition-shadow duration-300 flex items-center justify-center backdrop-blur-sm">
+                <img
+                  src={skill.src}
+                  alt={skill.alt}
+                  className="w-[40px] h-[40px] object-cover"
+                />
+                <div className="absolute bottom-[70px] left-1/2 -translate-x-1/2 px-2 py-1 text-[12px] text-[var(--white-color)] bg-[var(--main-color-1)] rounded-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+                  {skill.alt}
+                </div>
+              </button>
+            </div>
+          ))}
+        </div>
+      </SectionLayout>
+    </div>
   );
 }
