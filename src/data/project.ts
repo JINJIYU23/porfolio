@@ -3,6 +3,38 @@ import Emoji from "../assets/images/emoji.png";
 import Titae from "../assets/images/titae.png";
 import Touchbase from "../assets/images/touchbase.png";
 import Cats from "../assets/images/cats.png";
+
+// 티태
+import TitaeBook from "../assets/titae/book.gif";
+import TitaeBookmark from "../assets/titae/bookmark.gif";
+import TitaeDark from "../assets/titae/darkreac.gif";
+import TitaeGoal from "../assets/titae/goal.gif";
+import TitaeMyPage from "../assets/titae/mypage.gif";
+import TitaeOther from "../assets/titae/other.gif";
+import TitaeProfileImage from "../assets/titae/profileimage.gif";
+import TitaeProfile from "../assets/titae/profilenamepassword1.gif";
+import TitaeTitle from "../assets/titae/title.gif";
+
+// 썸픽
+import SomepickMain from "../assets/somepick/main.gif";
+import SomepickTaro from "../assets/somepick/taro.gif";
+
+// 터치베이스
+import TouchComment from "../assets/touchbase/comment.gif";
+import TouchPage from "../assets/touchbase/page.gif";
+import TouchUI from "../assets/touchbase/ui.gif";
+import TouchUpload from "../assets/touchbase/upload.gif";
+
+// 이모지 추천기
+import EmojiMain from "../assets/emoji/main.gif";
+import EmojiUI from "../assets/emoji/ui.gif";
+
+// 고양이
+import CatMain from "../assets/cat/main.png";
+import CatQuestion from "../assets/cat/question.png";
+import CatResult from "../assets/cat/result.png";
+import CatShare from "../assets/cat/share.png";
+
 import { LuMessageCircleHeart } from "react-icons/lu";
 import { LuPiggyBank } from "react-icons/lu";
 import { CiBaseball } from "react-icons/ci";
@@ -16,7 +48,7 @@ const projectItems = [
     bgColor: "rgba(107, 118, 255, 0.5)",
     textColor: "rgba(107, 118, 255, 1)",
     icon: LuPiggyBank,
-    date: "25.06.01 - 25.07.01",
+    date: "25.06.30 - 25.07.31",
     tech: [
       "React",
       "TypeScript",
@@ -27,6 +59,8 @@ const projectItems = [
       "Figma",
     ],
     logo: Titae,
+    github:
+      "https://github.com/prgrms-web-devcourse-final-project/WEB4_5_Code9ine_FE",
     url: "https://titae.vercel.app/",
     info: "단순한 가계부가 아닌, 미션 기반으로 소비 습관을 개선하는 챌린지형 자산관리 앱",
     infoDetail: [
@@ -172,8 +206,40 @@ const projectItems = [
     ],
     result: [
       {
-        title: "메인 페이지",
-        img: "",
+        title: "마이 프로필",
+        img: TitaeMyPage,
+      },
+      {
+        title: "다른 유저 프로필",
+        img: TitaeOther,
+      },
+      {
+        title: "목표 설정",
+        img: TitaeGoal,
+      },
+      {
+        title: "획득한 칭호 슬라이드 및 장착",
+        img: TitaeTitle,
+      },
+      {
+        title: "내가 찜한 글 북마크 반영",
+        img: TitaeBook,
+      },
+      {
+        title: "내가 찜한 갓플 북마크 반영",
+        img: TitaeBookmark,
+      },
+      {
+        title: "프로필 이미지 수정",
+        img: TitaeProfileImage,
+      },
+      {
+        title: "닉네임, 비밀번호 수정",
+        img: TitaeProfile,
+      },
+      {
+        title: "다크모드 및 반응형 UI",
+        img: TitaeDark,
       },
     ],
   },
@@ -195,6 +261,7 @@ const projectItems = [
       "Gemini API",
     ],
     logo: Somepick,
+    github: "https://github.com/run3go/Devcourse_SomePick",
     url: "https://somepick.netlify.app/",
     info: "커플과 솔로 모두를 위한 맞춤형 연애 서비스, 관심사 기반 소개팅, 커플 일정 공유,연애 커뮤니티까지 연애 상황에 따라 맞춤 기능을 제공하는 소개팅 플랫폼",
     infoDetail: [
@@ -262,7 +329,11 @@ const projectItems = [
     result: [
       {
         title: "메인 페이지",
-        img: "",
+        img: SomepickMain,
+      },
+      {
+        title: "운세 페이지",
+        img: SomepickTaro,
       },
     ],
   },
@@ -275,6 +346,7 @@ const projectItems = [
     date: "",
     tech: ["React", "TypeScript", "Zustand", "Tailwind CSS", "Figma"],
     logo: Touchbase,
+    github: "https://github.com/FE5-2-7team/TouchBase",
     url: "https://kdt-touch-base.netlify.app/",
     info: "KBO 팬들을 위한 야구 커뮤니티",
     infoDetail: [
@@ -344,7 +416,19 @@ const projectItems = [
     result: [
       {
         title: "구단별 펜페이지",
-        img: "",
+        img: TouchPage,
+      },
+      {
+        title: "댓글 / 좋아요",
+        img: TouchComment,
+      },
+      {
+        title: "글 작성",
+        img: TouchUpload,
+      },
+      {
+        title: "다크모드 및 반응형 UI",
+        img: TouchUI,
       },
     ],
   },
@@ -366,6 +450,7 @@ const projectItems = [
       "Tailwind CSS",
     ],
     logo: Emoji,
+    github: "https://github.com/JINJIYU23/Emoji-Recommender",
     url: "https://emoji-recommender.vercel.app/",
     info: "검색어에 따라 Gemini를 사용한 인공지능으로 이모지를 추천해주는 이모지 추천기 emoji",
     infoDetail: [
@@ -395,8 +480,12 @@ const projectItems = [
     ],
     result: [
       {
-        title: "구단별 펜페이지",
-        img: "",
+        title: "메인 페이지",
+        img: EmojiMain,
+      },
+      {
+        title: "다크모드 및 반응형 UI",
+        img: EmojiUI,
       },
     ],
   },
@@ -409,6 +498,7 @@ const projectItems = [
     date: "",
     tech: ["React", "JavaScript", "Vite"],
     logo: Cats,
+    github: "https://github.com/JINJIYU23/MBTI-TEST",
     url: "https://mbti-test-virid.vercel.app/",
     info: "12가지 질문을 통해서 나의 MBTI와 어울리는 고양이를 찾을 수 있는 재미있는 심리 테스트",
     infoDetail: [
@@ -439,8 +529,20 @@ const projectItems = [
     ],
     result: [
       {
-        title: "구단별 펜페이지",
-        img: "",
+        title: "메인 페이지",
+        img: CatMain,
+      },
+      {
+        title: "질문 페이지",
+        img: CatQuestion,
+      },
+      {
+        title: "결과 페이지",
+        img: CatResult,
+      },
+      {
+        title: "카카오톡 공유하기",
+        img: CatShare,
       },
     ],
   },

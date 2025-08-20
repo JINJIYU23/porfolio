@@ -23,6 +23,7 @@ export interface ProjectItem {
   date: string;
   tech: string[];
   logo: string;
+  github: string;
   url: string;
   info?: string;
   infoDetail?: string[];

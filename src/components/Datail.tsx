@@ -136,8 +136,19 @@ export default function Detail({
             <h2 className="text-[24px] text-[var(--main-color-1)]">
               페이지별 구현 결과
             </h2>
-            <ul>
-              <li></li>
+            <ul className="ml-4 list-disc">
+              {project.result?.map((img) => (
+                <li>
+                  <p className="font-medium text-[16px] my-[10px]">
+                    {img.title}
+                  </p>{" "}
+                  <img
+                    src={img.img}
+                    alt={`${project.title} 마이 프로필`}
+                    className="object-contain rounded-[10px]"
+                  />
+                </li>
+              ))}
             </ul>
           </div>
         </div>
