@@ -25,7 +25,7 @@ export default function Layout() {
         />
       </div>
 
-      <div className="relative z-10 flex flex-row gap-5 py-2 pr-4 items-center justify-end">
+      <div className="relative z-10 flex flex-row gap-5 py-5 pr-4 items-center justify-end">
         <a
           className={iconClass}
           target="_blank"

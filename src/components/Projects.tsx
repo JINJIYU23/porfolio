@@ -78,12 +78,11 @@ export default function Projects() {
               </SpotlightCard>
             ))}
           </div>
-
-          {selectedProject && (
-            <Detail onClose={closeModal} project={selectedProject} />
-          )}
         </SectionLayout>
       </div>
+      {selectedProject && (
+        <Detail onClose={closeModal} project={selectedProject} />
+      )}
     </>
   );
 }

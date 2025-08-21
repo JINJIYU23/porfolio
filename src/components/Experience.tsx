@@ -10,16 +10,16 @@ interface Props {
 
 const ExperienceItem = ({ date, title, tag, details }: Props) => (
   <div className="flex items-start text-[var(--white-color)] mt-[50px] first:mt-0">
-    <div className="w-[160px] text-left pr-4">
+    <div className="w-[120px] md:w-[160px] text-left pr-4">
       <p className="text-[16px] p-1">{date}</p>
     </div>
 
     <div className="flex flex-col text-left">
-      <div className="flex items-center gap-2">
-        <p className="text-[24px] text-[var(--main-color-1)]">{title} </p>
-        <span className="text-[16px] text-[var(--main-color-2)] border rounded-[10px] px-2 py-1">
+      <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
+        <p className="text-[24px] text-[var(--main-color-1)]">{title}</p>
+        <button className="text-[16px] text-[var(--main-color-2)] border rounded-[10px] px-2 py-1">
           {tag}
-        </span>
+        </button>
       </div>
       <ul className="text-[16px] mt-[10px] list-disc ml-5">
         {details.map((item, index) => (
