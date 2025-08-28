@@ -34,7 +34,7 @@ export default function Skills() {
   const fadein = useFadeIn();
   return (
     <div {...fadein}>
-      <SectionLayout title="Skills">
+      <SectionLayout title="Skills / Tools">
         <div className="grid grid-cols-4 gap-6">
           {skills.map((skill, index) => (
             <div key={index} className="relative">

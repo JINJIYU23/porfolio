@@ -17,7 +17,7 @@ export default function SectionLayout({ title, children }: SectionLayoutProps) {
       "
     >
       {title && (
-        <h1 className="text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] text-[var(--main-color-1)] py-[30px] sm:py-[40px] lg:py-[50px] text-center">
+        <h1 className="text-[24px] md:text-[32px] text-[var(--main-color-1)] py-[30px] sm:py-[40px] lg:py-[50px] text-center">
           {title}
         </h1>
       )}
