@@ -27,8 +27,7 @@ export default function Moto() {
             />
             <div className="flex flex-col md:ml-[30px] justify-between text-start ">
               <h1 className="text-[20px] mb-[10px] font-semibold text-[var(--point-color-1)]">
-                Q1. 여러 개발 분야 중 프론트엔드를 선택하게 된 이유는
-                무엇인가요?
+                여러 개발 분야 중 프론트엔드를 선택하게 된 이유는 무엇인가요?
               </h1>
               <p className="text-[16px] mb-[20px] leading-[30px]">
                 학부시절, 멋쟁이 사자처럼이라는 동아리에서 프론트엔드 분야를
@@ -41,7 +40,7 @@ export default function Moto() {
               </p>
 
               <h1 className="text-[20px] mb-[10px] font-semibold text-[var(--point-color-1)]">
-                Q3. 앞으로 프론트엔드 개발자로서 어떤 개발자가 되고싶나요?
+                앞으로 프론트엔드 개발자로서 어떤 개발자가 되고싶나요?
               </h1>
               <p className="text-[16px] leading-[30px]">
                 프론트엔드는 다른 개발 분야보다 더 빠르게 변화하는 기술이라고
